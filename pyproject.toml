@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "castep_pygments"
+description = "Syntax highlighting for CASTEP inputs"
+version = "0.1"
+dependencies = [
+   "pygments"
+]
+authors = [{name = "Jacob Wilkins", email = "jacob.wilkins@stfc.ac.uk"}]
+requires-python = ">= 3.6"
+readme = "README.md"
+keywords = ["castep", "dft", "parser", "pygments"]
+license = {text = "MIT"}
+
+[project.entry-points."pygments.lexers"]
+castep_param = 'castep_pygments.castep_lexer:ParamFileLexer'
+castep_cell = 'castep_pygments.castep_lexer:CellFileLexer'
